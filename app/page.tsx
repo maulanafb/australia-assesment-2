@@ -42,7 +42,10 @@ const Home = () => {
       <SignInButton />
       {session && (
         <>
-          <CreatePostForm userId={session.user.id} onPostCreated={fetchPosts} />
+          <CreatePostForm
+            userId={session?.user?.id}
+            onPostCreated={fetchPosts}
+          />
         </>
       )}
       <PostList posts={posts} onOperationAdded={fetchPosts} />
